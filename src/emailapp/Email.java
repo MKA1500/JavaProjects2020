@@ -8,17 +8,15 @@ public class Email {
 	private String password;
 	private String department;
 	private String email;
-	private int mailboxCapacity;
-	private int defaultPasswordLength;
+	private int mailboxCapacity = 500;
+	private int defaultPasswordLength = 8;
 	private String alternateEmail;
-	private String companyPrefix;
+	private String companyPrefix = "audi.eu";
 	
 	// constructor to receive the first name and last name
 	public Email(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.defaultPasswordLength = 8;
-		this.companyPrefix = "audi.eu";
 		
 		System.out.println("Email created: " + this.firstName + " " + this.lastName);
 		
@@ -74,6 +72,35 @@ public class Email {
 	}
 	
 	// set the mailbox capacity
+	public void setMailboxCapacity(int capacity) {
+		this.mailboxCapacity = capacity;
+	}
 	
 	// set the alternative email
+	public void setAlternateEmail(String alternateEmail) {
+		this.alternateEmail = alternateEmail;
+	}
+	
+	// change password
+	public void changePassword(String password) {
+		this.password = password;
+	}
+	
+	public int getMailboxCapacity() {
+		return mailboxCapacity;
+	}
+	
+	public String getAlternateEmail() {
+		return alternateEmail;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public String showInfo() {
+		return "DISPLAY NAME: " + firstName + " " + lastName + "\n" +
+				"COMPANY EMAIL: " + email + "\n" +
+				"MAILBOX CAPACITY: " + mailboxCapacity + " MB";
+	}
 }
